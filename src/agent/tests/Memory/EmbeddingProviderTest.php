@@ -144,7 +144,9 @@ final class EmbeddingProviderTest extends TestCase
             <<<MARKDOWN
                 ## Dynamic memories fitting user message
 
-                {"fact":"The sky is blue"}{"fact":"Water is wet"}
+                fact: The sky is blue
+                fact: Water is wet
+
                 MARKDOWN,
             $memory[0]->getContent(),
         );

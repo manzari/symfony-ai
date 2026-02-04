@@ -11,6 +11,7 @@
 
 namespace Symfony\AI\Agent\Memory;
 
+use HelgeSverre\Toon\Toon;
 use Symfony\AI\Agent\Input;
 use Symfony\AI\Platform\Message\Content\ContentInterface;
 use Symfony\AI\Platform\Message\Content\Text;
@@ -58,7 +59,7 @@ final class EmbeddingProvider implements MemoryProviderInterface
 
         $content = '';
         foreach ($foundEmbeddingContent as $document) {
-            $content .= json_encode($document->metadata);
+            $content .= Toon::encode($document->metadata).\PHP_EOL;
         }
 
         if ('' === $content) {
